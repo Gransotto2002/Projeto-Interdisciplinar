@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<head>
+    <html lang="pt-br">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style-cadastro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;800&display=swap" rel="stylesheet">
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <header>
+       <a href="/"> <img src="images/logotopo.png" alt="Logo"></a>
+    </header>
+
+    <form action="/salvar" method="post" enctype="multipart/form-data">
+        <div class="container-user">
+            <div id="user-img" class="img-user"></div>
+            <input name="foto" id="upload-image"  type="file" accept="image/*" style="display: none;">
+            <label for="upload-image">
+                <i class="fas fa-camera"></i>
+                &nbsp;
+                Carregar
+            </label>
+        </div>
+        <div class="floating-label">
+            <input name="nome" class="floating-input" required type="text" placeholder="">
+            <span class="highlight"></span>
+            <label>Nome e sobrenome *</label>
+        </div>
+        <div class="group">
+            <div class="floating-label fl-045">
+                <select name="tipo" id="select" required class="floating-select" onclick="this.setAttribute('value', this.value);" value="">
+                    <option value="0" selected disabled></option>
+                    <option value="1">Graduação</option>
+                    <option value="2">Pós-Graduação</option>
+                </select>
+                <span class="highlight"></span>
+                <label>Tipo *</label>
+            </div>
+            <div class="floating-label fl-045">
+                <select name="curso" id="lista-cursos" required class="floating-select" onclick="this.setAttribute('value', this.value);" value="">
+                    <option selected disabled></option>
+
+                    <% for(i = 0; i < cursos.length; i++){%>
+                        <div id="grad">
+                            <% if(cursos[i].curso_value == 1){%>
+                                <option value="<%= cursos[i].nome%>" class="graduacao" ><%= cursos[i].nome%></option>
+                            <%}%>
+                        </div>
+                        <div class="pos">
+                            <% if(cursos[i].curso_value == 2){%>
+                                <option value="<%= cursos[i].nome%>" class="pos-grad" ><%= cursos[i].nome%></option>
+                            <%}%>
+                        </div>
+                    <%}%>     
+                   
+
+                    
+
+                </select>
+                <span class="highlight"></span>
+                <label>Curso *</label>
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="floating-label fl-045">
+                <input name="ra" required class="floating-input" type="text" placeholder=" ">
+                <span class="highlight"></span>
+                <label>Registro acadêmico *</label>
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="floating-label fl-045">
+                <input name="email" required class="floating-input" type="email" placeholder=" ">
+                <span class="highlight"></span>
+                <label>E-mail *</label>
+            </div>
+            <div class="floating-label fl-045">
+                <input required class="floating-input" type="email" placeholder=" ">
+                <span class="highlight"></span>
+                <label>Confirme seu e-mail *</label>
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="floating-label fl-045">
+                <input name="senha" required class="floating-input" type="password" placeholder=" ">
+                <span class="highlight"></span>
+                <label>Senha</label>
+            </div>
+            <div class="floating-label fl-045">
+                <input name="cpf" required class="floating-input" type="number" placeholder=" ">
+                <span class="highlight"></span>
+                <label>CPF *</label>
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="floating-label fl-045">
+                <input name="nascimento" required class="floating-input" type="text" onclick="(this.type='date')" placeholder=" ">
+                <span class="highlight"></span>
+                <label>Data nascimento *</label>
+            </div>
+            <div class="floating-label fl-045">
+                <input name="celular" required class="floating-input" type="number" placeholder=" ">
+                <span class="highlight"></span>
+                <label>Fone/Celular *</label>
+            </div>
+        </div>
+        <div class="container-btn-save">
+            <button type="submit" class="btn-save">
+                <i class="fas fa-save"></i>
+                &nbsp;
+                Enviar
+            </button>
+        </div>
+    </form>
+    <footer>
+        <p>Copyright 2016 - FASIPE Todos os Direitos Reservados</p>
+    </footer>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/script-cadastro.js"></script>
+</body>
+</html>

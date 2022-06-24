@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+  <html lang="pt-br">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style-login.css">
+  <title>Login</title>
+</head>
+
+<body>
+
+  <% if(aviso){%>
+    <div class="aviso">
+      <%= aviso %> 
+    </div>
+  <%}%>
+  <div class="container">
+    <div class="logo">
+      <div class="img-1">
+      </div>
+      <img src="images/fasipe-logo.png" class="img-2">
+    </div>
+
+    <form action="/user" method="post">
+      <div class="inputs">
+        <label for=""><img src="images/ic_baseline-email.svg" alt=""></label>
+        <input name="email" type="email" placeholder="e-mail" required>
+      </div>
+      <div class="inputs">
+        <label for=""><img src="images/oi_lock-locked1.svg" alt=""></label>
+        <input name="senha" type="password" placeholder="password" required>
+      </div>
+      <button type="submit">LOGIN</button>
+       <a href="/cadastro">Cadastre-se</a>
+
+    </form>
+  </div>
+</body>
+
+</html>

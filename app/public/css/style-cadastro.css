@@ -1,0 +1,226 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  background-color: #f7f7f7;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #323232;
+  padding-bottom: 10px;
+}
+
+header > img {
+  height: 85px;
+}
+
+header > h1 {
+  font-size: 1.8em;
+  color: #009335;
+  font-weight: 800 !important;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 221px);
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.img-user {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background: url("../images/unknow.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+}
+
+.container-user > label {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background-color: #efefef;
+  transition: all 0.2s;
+}
+
+.container-user > label:hover {
+  color: #fff;
+  background-color: rgb(0, 0, 0, 0.5);
+}
+
+.group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fl-045 {
+  flex: 0.45;
+}
+
+.floating-label {
+  position: relative;
+  margin-bottom: 30px;
+}
+.floating-input {
+  color: #999999;
+  transition: 0.2s;
+}
+
+.floating-input,
+.floating-select {
+  font-size: 14px;
+  padding: 4px 4px;
+  display: block;
+  width: 100%;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #cfcfcf;
+}
+
+
+.floating-input:focus,
+.floating-select:focus {
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 16px;
+  outline: none;
+  color: #009335;
+  border-bottom: 2px solid #009335;
+}
+
+.floating-label > label {
+  color: #999;
+  font-size: 14px;
+  font-weight: 600;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 5px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.floating-input:focus ~ label,
+.floating-input:not(:placeholder-shown) ~ label {
+  top: -18px;
+  font-size: 14px;
+  color: #009335;
+}
+
+.floating-select:focus ~ label,
+.floating-select:not([value=""]):valid ~ label {
+  top: -18px;
+  font-size: 14px;
+  color: #009335;
+}
+
+.floating-textarea {
+  min-height: 30px;
+  max-height: 260px;
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.highlight {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  top: 15%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+footer {
+  padding: 20px;
+  background-color: #323232;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-btn-save {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-save {
+  width: 100px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+
+.btn-save:hover {
+  background-color: #009335;
+  color: #fff;
+}
+
+footer > p {
+  color: #009335;
+}
+
+@media (max-width: 600px) {
+  form {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .group {
+    display: block;
+  }
+
+  header > h1 {
+    font-size: 1em;
+  }
+
+  footer > p {
+    font-size: 14px;
+  }
+}

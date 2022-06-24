@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+body {
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    font-family: 'Varela Round', sans-serif;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    background: #282C34;
+    position: fixed;
+    height: 60px !important;
+    z-index: 10;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+
+}
+
+.btn-grad {
+    width: 150px;
+    margin-left: auto;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.3s;
+    color: white;
+    font-weight: bold;
+    font-family: 'Varela Round', sans-serif;
+    letter-spacing: 1px;
+    font-size: 15px;
+    display: block;
+    height: 101%;
+    border: none;
+    background-color: #029046;
+
+}
+
+.btn-grad:hover {
+    background-color: grey;
+    cursor: pointer;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 50px;
+    margin: 0 auto;
+    height: calc(100vh - 60px);
+    margin-top: 20px;
+    overflow: auto;
+    position: relative;
+}
+
+
+.alter{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.alter button{
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.alter button:hover{
+    background: rgb(223, 160, 160);
+    border: 2px solid red;
+    color: #fff;
+    letter-spacing: 3px;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-box input{
+    width: 450px;
+    padding: 12px;
+    border-radius: 10px;
+    outline: none;
+    text-align: center;
+}
+
+.input-box input:hover{
+    border: 2px solid blue;
+    background: rgb(226, 225, 225);
+}
+
+input:focus{
+    background-color: rgb(226, 225, 225);
+}
+
+.foto{
+    width: 200px;
+    height: 250px;
+    border-radius: 40px;
+    background-color: #000;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.input-read {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+
+.aviso{
+    width: 400px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgb(223, 162, 172);
+    border: 3px solid red;
+}
+
+.presença {
+    width: 250px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: #0bd707;
+    font-weight: 700;
+    transition: 0.5s all;
+    color: #363b44;
+}
+
+.aulas{
+    width: 100%;
+}
+
+.presença:hover{
+    background-color: rgb(9, 141, 9);
+    cursor: pointer;
+}
+
+
+input[type="checkbox"]:checked~.main {
+    width: calc(100vw - 250px);
+    margin-left: 250px;
+}
+
+
+#sidebarMenu {
+    height: calc(100vh - 60px);
+    overflow: auto;
+    position: fixed;
+    left: 0;
+    width: 250px;
+    margin-top: 60px;
+    transform: translateX(-250px);
+    transition: transform 250ms ease-in-out;
+    background-color: #282C34;
+}
+
+.sidebar-topo {
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.sidebar-topo .img-logo img {
+    width: 100px;
+    height: 100%;
+    margin: 10px auto;
+    display: block;
+}
+
+.sidebar-topo .img-texto img {
+    width: 100%;
+    height: 100%;
+}
+
+.sidebarMenuInner {
+    margin-top: 250px;
+    padding: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.sidebarMenuInner li {
+    transition: 0.3s;
+    list-style: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.sidebarMenuInner li:hover {
+    background-color: #029046;
+}
+
+.sidebarMenuInner li span {
+    display: block;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.50);
+}
+
+.sidebarMenuInner li a {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.sidebarMenuInner li a i {
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+input[type="checkbox"]:checked~#sidebarMenu {
+    transform: translateX(0);
+}
+
+.openSidebarMenu {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
+}
+
+.sidebarIconToggle {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 22px;
+    left: 15px;
+    height: 22px;
+    width: 22px;
+}
+
+.spinner {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+
+.diagonal.part-1 {
+    position: relative;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    float: left;
+}
+
+.diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+
+.openSidebarMenu:checked~.sidebarIconToggle>.horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    opacity: 0;
+}
+
+.openSidebarMenu:checked~.sidebarIconToggle>.diagonal.part-1 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 8px;
+}
+
+.openSidebarMenu:checked~.sidebarIconToggle>.diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -9px;
+}
+
+@media(max-width: 600px) {
+    #sidebarMenu {
+        width: 100%;
+        transform: translateX(-100%);
+    }
+
+    input[type="checkbox"]:checked~.main {
+        display: none;
+    }
+}
