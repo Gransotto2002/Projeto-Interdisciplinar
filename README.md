@@ -53,4 +53,13 @@ A idéia é que a aplicação se integre com outras, então para isso um relató
 
 
 
+Tecnologias utilizadas :
+NODEJS
+Banco de dados relacional "Mysql"
+Express
 
+
+Bibliotecas importantes:
+Express-fileUpload para realocação de fotos enviadas(são direcionadas para pasta uploads já com o nome hasheado)
+uuid para criptografia
+ejs -  template engine para realizar a lógica dentro da aplicação
