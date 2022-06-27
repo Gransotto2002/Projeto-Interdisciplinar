@@ -63,6 +63,10 @@ O arquivo JSON é formado com o nome e presenças referentes ao dia em que o rel
 ![image](https://user-images.githubusercontent.com/101595139/176014180-8d5ea979-0b36-4c35-8e53-a72f5e292a17.png)
 
 
+O interessante é que o módulo 'fs' verifica a existencia de um arquivo para altera-lo, se esse arquivo não existir ele não retorna um erro, mas sim cria um novo arquivo e já fornece os dados em JSON para ele.
+
+
+
 
 
 Tecnologias utilizadas :
@@ -71,7 +75,8 @@ Banco de dados relacional "Mysql"
 Express
 
 
-Bibliotecas importantes:
+Módulos importantes:
 Express-fileUpload para realocação de fotos enviadas(são direcionadas para pasta uploads já com o nome hasheado)
 uuid para criptografia
 ejs -  template engine para realizar a lógica dentro da aplicação
+fs - criação e manipulação de arquivos.
