@@ -25,7 +25,7 @@
 
         <div class="sidebar-topo">
             <div class="img-logo">
-                <a href="/user/?id=<%= data %>"><img src="../images/CARTEIRINHAS ICONE.png" alt="Logo carteirinha"></a>
+                <a href="/user/?id=<%= info[0].id %>"><img src="../images/CARTEIRINHAS ICONE.png" alt="Logo carteirinha"></a>
             </div>
             <div class="img-texto">
                 <img src="../images/fasipe-logo.png" alt="sistema de carteirinha">
@@ -53,6 +53,10 @@
                     </div>
                 </div>    
             </div>    
+            <div class="info-bottom">
+                <label for="email">Email</label>
+                <input class="input-read" name="email" id="email" value="<%= info[0].email%>">
+            </div>
             <div class="info-bottom">
                 <label for="ra">Registro Acadêmico</label>
                 <input class="input-read" name="ra" id="ra" readonly value="<%= info[0].ra%>">

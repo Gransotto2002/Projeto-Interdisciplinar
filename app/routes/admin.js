@@ -32,7 +32,19 @@ module.exports = application => {
   })
 
   application.get('/relatorio', (req, res) => {
-    application.app.controllers.admin.relatorio(application, req, res)
+    application.app.controllers.admin.historico(application, req, res)
+  })
+
+  application.get('/extrair/relatorio', (req, res) => {
+    application.app.controllers.admin.extrairRelatorio(application, req, res)
+  })
+
+  application.get('/data/relatorios', (req, res) => {
+    application.app.controllers.admin.verRelatorios(application, req, res)
+  })
+
+  application.post('/ver/relatorio', (req, res) => {
+    application.app.controllers.admin.exibirRelatorio(application, req, res)
   })
 
 }

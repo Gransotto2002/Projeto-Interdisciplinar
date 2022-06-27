@@ -23,8 +23,8 @@ class Controller{
     this._connection.query(`select * from presenca where id = ${id} and data like '${ano}-0${mes}-${dia}%';`, callback)
   }
 
-  marcarPresenca(id, callback){
-    this._connection.query(`insert into presenca (id) value(${id})`, callback)
+  marcarPresenca(id, data, callback){
+    this._connection.query(`insert into presenca (id, ra, nome) value(${id}, ${data[0].ra}, '${data[0].nome}')`, callback)
   }
 
   historico(id, callback){
@@ -32,7 +32,7 @@ class Controller{
   }
 
   alterar(id, callback){
-    this._connection.query(`select * from usuarios where id = ${id};`, callback)
+    this._connection.query(`select * from usuarios where id = ${id}`, callback)
   }
 
   salvarEdit(id, data, callback){
@@ -43,9 +43,13 @@ class Controller{
     this._connection.query(`update usuarios set senha = '${data.novaSenha}' where id = ${id} `, callback)
   }
 
-  presenca(dia, mes, ano, callback){
+  relatorio(ano, mes, dia, callback){
     this._connection.query(`select * from presenca where data like '${ano}-0${mes}-${dia}%'`, callback)
   }
+
+  
+
+
 
 }
 

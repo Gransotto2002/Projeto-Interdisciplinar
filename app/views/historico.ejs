@@ -25,7 +25,7 @@
 
         <div class="sidebar-topo">
             <div class="img-logo">
-                <a href="/user/?id=<%= id%>"><img src="../images/CARTEIRINHAS ICONE.png" alt="Logo carteirinha"></a>
+                <a href="/user/?id=<%= id %>"><img src="../images/CARTEIRINHAS ICONE.png" alt="Logo carteirinha"></a>
             </div>
             <div class="img-texto">
                 <img src="../images/fasipe-logo.png" alt="sistema de carteirinha">
@@ -33,18 +33,33 @@
         </div>
 
         <ul class="sidebarMenuInner">
-            <li><a href="#"><i class="fas fa-clipboard-check"></i>Histórico</a></li>
+            <% if(admin == true) { %>
+                <li><a href="/data/relatorios?id=<%= id %>"><i class="fa-solid fa-chart-simple"></i>Relatórios</a></li>
+            <%}%>
             <li><a href="/alterar/info?id=<%= id %>"><i class="fas fa-users-cog"></i>Ajustes</a></li>
         </ul>
     </div>
     <main class="main d-flex justify-content-center">
-
         <div class="aulas">
             <div class="materia d-flex flex-column align-items-center">
+                <% if(admin == true){ %>
+                    <h3>Relatório de Presença da turma</h3>
+                <%}else{%>
+                    <h3>Suas presenças</h3>
+                <%}%>    
+
+                <% if(presenca == ''){%>
+                    <div class="aviso m-4">Sem alunos presentes hoje 😞 </div>
+                <%}else{%>    
                 <table class="table w-75 table-dark table-borderless table-hover">
                     <thead>
                       <tr>
-                        <th scope="col">Nº</th>
+                        <% if(admin == true){%>
+                            <th scope="col">RA</th>
+                            <th scope="col">Nome</th>
+                        <%}else{%>
+                            <th scope="col">Nº</th>
+                        <%}%>    
                         <th scope="col">Dia</th>
                       </tr>
                     </thead>
@@ -53,15 +68,26 @@
                             <% let data = presenca[i].data.toString() %>
                             <% let dataFormatada = data.split('G') %>
                             <tr>
-                                <th scope="row"><%= i + 1 %></th>
-                                <td><%= dataFormatada[0] %>></td>
+                                <%if(admin == true){%>
+                                    <th scope="row"><%= presenca[i].ra %></th>
+                                    <td><%= presenca[i].nome %></td>
+                                <%}else{%>
+                                    <th scope="row"><%= i + 1 %></th>
+                                <%}%>    
+                                <td><%= dataFormatada[0] %></td>
                             </tr>
                         <%}%>
                     </tbody>
                   </table>
+                <%}%>
+                
+                <% if(aviso !== '' && admin == true){ %>
+                    <h3 class="aviso-sucesso"><%= aviso %></h3>
+                <%}%>    
+                <% if(admin == true && presenca !== ''){%>
+                        <a href="/extrair/relatorio?id=<%= id %>"><button class="relatorio" type="submit">Extrair relatório</button></a>
+                <%}%>    
             </div>
-
-    
     </main>
     <script src="../js/script.js"></script>
 </body>

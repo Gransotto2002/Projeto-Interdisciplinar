@@ -25,45 +25,52 @@
 
         <div class="sidebar-topo">
             <div class="img-logo">
-                <a href="/user/?id=<%= id%>"><img src="../images/CARTEIRINHAS ICONE.png" alt="Logo carteirinha"></a>
+                <a href="/user/?id=<%= id %>"><img src="../images/CARTEIRINHAS ICONE.png" alt="Logo carteirinha"></a>
             </div>
             <div class="img-texto">
                 <img src="../images/fasipe-logo.png" alt="sistema de carteirinha">
             </div>
         </div>
 
-        <ul class="sidebarMenuInner">
-            <li><a href="#"><i class="fas fa-clipboard-check"></i>Histórico</a></li>
-            <li><a href="/alterar/info?id=<%= id %>"><i class="fas fa-users-cog"></i>Ajustes</a></li>
+        <ul class="sidebarMenuInner">  
+          <li><a href="/ver/relatorios?id=<%= id %>"><i class="fa-solid fa-chart-simple"></i>Relatórios</a></li>
+          <li><a href="/alterar/info?id=<%= id %>"><i class="fas fa-users-cog"></i>Ajustes</a></li>
         </ul>
     </div>
-    <main class="main d-flex justify-content-center">
+    <main class="main d-flex align-items-center justify-content-center">
+      <form class="d-flex flex-column align-items-center w-100 mb-5" method="post" action="/ver/relatorio?id=<%= id %>">
+        <input class="w-25 p-2 border-1" type="date" name="data" id="data">
+        <button class="w-25 p-2 border-2" type="submit">Exibir relatório</button>
+      </form>
+            
+      <% if(data) {%>
+        <h3> Relatório <%= data %> </h2>
+      <%}%>
 
-        <div class="aulas">
-            <div class="materia d-flex flex-column align-items-center">
-                <table class="table w-75 table-dark table-borderless table-hover">
-                    <thead>
-                      <tr>
-                        <th scope="col">Nº</th>
-                        <th scope="col">Dia</th>
-                        <th scope="col">Aluno</th>
-                      </tr>
-                    </thead>
-                    <tbody>    
-                        <% for(i = 0; i < presenca.length; i++){%>
-                            <% let data = presenca[i].data.toString() %>
-                            <% let dataFormatada = data.split('G') %>
-                            <tr>
-                                <th scope="row"><%= i + 1 %></th>
-                                <td><%= dataFormatada[0] %>></td>
-                                <td><%= data[0].nome %>></td>
-                            </tr>
-                        <%}%>
-                    </tbody>
-                  </table>
-            </div>
+      <% if(erro){%>
+        <h5 class="aviso"><%= erro%></h5>
+      <%}%>  
+      
 
-    
+      <% if(presenca !== ''){ %>
+        <table class="table w-75 table-dark table-borderless table-hover">
+            <thead>
+              <tr>
+                <th scope="col">RA</th>
+                <th scope="col">Nome</th>
+              </tr>
+            </thead>
+            <tbody>    
+                <% for(i = 0; i < presenca.length; i++){%>
+                    <tr>
+                        <th scope="row"><%= presenca[i].ra %></th>
+                        <td><%= presenca[i].nome %></td>
+                    </tr>
+                <%}%>
+            </tbody>
+          </table>
+      <%}%>  
+
     </main>
     <script src="../js/script.js"></script>
 </body>
