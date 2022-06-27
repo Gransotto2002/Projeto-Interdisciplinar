@@ -51,6 +51,11 @@ alunos.
 
 A idéia é que a aplicação se integre com outras, então para isso um relatório em JSON com os dados dos alunos presentes na data pode ser retirado pelo admin.
 
+![image](https://user-images.githubusercontent.com/101595139/176012644-1f8d13ad-94e8-4db0-9043-c1e2ce32ef1e.png)
+
+
+![image](https://user-images.githubusercontent.com/101595139/176012717-8e826cb1-c042-4fba-b696-78574c0e94a6.png)
+
 
 
 Tecnologias utilizadas :
