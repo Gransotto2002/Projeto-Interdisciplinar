@@ -60,6 +60,7 @@ O arquivo JSON é formado com o nome e presenças referentes ao dia em que o rel
 
 É possível ter uma noçãa a partir do código: 
 ![image](https://user-images.githubusercontent.com/101595139/176014076-364fc5d9-efcb-4e74-91df-2fd8f20a2667.png)
+![image](https://user-images.githubusercontent.com/101595139/176014180-8d5ea979-0b36-4c35-8e53-a72f5e292a17.png)
 
 
 
