@@ -56,6 +56,12 @@ A idéia é que a aplicação se integre com outras, então para isso um relató
 
 ![image](https://user-images.githubusercontent.com/101595139/176012717-8e826cb1-c042-4fba-b696-78574c0e94a6.png)
 
+O arquivo JSON é formado com o nome e presenças referentes ao dia em que o relatório foi formado.
+
+É possível ter uma noçãa a partir do código: 
+![image](https://user-images.githubusercontent.com/101595139/176013849-32988ef9-be0e-4736-abe4-274b1d955e4e.png)
+
+
 
 
 Tecnologias utilizadas :
