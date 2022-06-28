@@ -51,7 +51,7 @@
                 <% if(presenca == ''){%>
                     <div class="aviso m-4">Sem alunos presentes hoje 😞 </div>
                 <%}else{%>    
-                <table class="table w-75 table-dark table-borderless table-hover">
+                <table class="table w-75 mt-4 table-dark table-borderless table-hover">
                     <thead>
                       <tr>
                         <% if(admin == true){%>
@@ -79,13 +79,13 @@
                         <%}%>
                     </tbody>
                   </table>
+                  <% if(admin == true && presenca !== ''){%>
+                          <a class="mt-3" href="/extrair/relatorio?id=<%= id %>"><button class="relatorio" type="submit">Extrair relatório</button></a>
+                  <%}%>    
                 <%}%>
                 
                 <% if(aviso !== '' && admin == true){ %>
                     <h3 class="aviso-sucesso"><%= aviso %></h3>
-                <%}%>    
-                <% if(admin == true && presenca !== ''){%>
-                        <a href="/extrair/relatorio?id=<%= id %>"><button class="relatorio" type="submit">Extrair relatório</button></a>
                 <%}%>    
             </div>
     </main>
